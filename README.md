@@ -4,7 +4,7 @@ A simple menu app for browser
 
 ## Description
 
-The goal was to create a menu app based on some JS OOP concepts like creating classes. The following guidelines had to be met:
+The goal was to create a menu app based on some Javascript OOP concepts like creating classes. The following guidelines had to be met:
 
 - Use at least one array.
 - Use at least two classes.
