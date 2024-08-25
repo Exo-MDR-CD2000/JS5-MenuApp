@@ -18,7 +18,7 @@ The menu app is a simple book catalog that lets a user add a new book to the lib
 
 Clone the repo and open a live server in VS code. Alternatively, you can click on the deployed link to the right or down below:
 
-- [Deployed Link](WIP)
+- [Deployed Link](https://exo-mdr-cd2000.github.io/JS5-MenuApp/)
 
 
 ## Link(s)
