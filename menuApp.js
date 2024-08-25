@@ -29,7 +29,8 @@ class Library {
     this.books = []; // initialize an empty array to store books
   }
 
-  addBook(title, author, year, isbn) { // arguments for the book item
+  addBook(title, author, year, isbn) {
+    // arguments for the book item
     const newBook = new BookItem(title, author, year, isbn); // create a new book item
     this.books.push(newBook); // push the new book item to the books array
     alert(`Added book: ${title} by ${author}`); // display a message to the user
@@ -41,7 +42,8 @@ class Library {
       return; // Exit the function if there are no books in the library
     }
     let bookList = `Library Books:\n`; // Initialize the book list string
-    this.books.forEach((book, index) => { // each book in the books array
+    this.books.forEach((book, index) => {
+      // each book in the books array
       bookList += `${index + 1}. ${book.title} by ${book.author} (Year ${
         book.year
       }, ISBN: ${book.isbn})\n`; // concatenate the book details to the book list string
@@ -49,8 +51,30 @@ class Library {
     alert(bookList); // This will only be called if there are books in the library
   }
 
+/*
+  editBook(index, title, author, year, isbn) {
+    if (this.books.length === 0) {
+      alert(`No books in the library to edit`);
+      return; // Exit the function if there are no books in the library
+    }
+    if (index < 1 || index > this.books.length) {
+      // if the index is less than 1 or greater than the number of books
+      alert(`Invalid book index. Please try again.`); // we display an error message
+      return;
+    }
+    const editBook = this.books[index]; // get the book to edit
+      editBook.title = title;
+      editBook.author = author;
+      editBook.year = year;
+      editBook.isbn = isbn;
+      alert(`Edited book: ${title} by ${author}`);
+  }
+      
+*/    
+
   deleteBook(index) {
-    if (index < 1 || index > this.books.length) { // if the index is less than 1 or greater than the number of books
+    if (index < 1 || index > this.books.length) {
+      // if the index is less than 1 or greater than the number of books
       alert(`Invalid book index. Please try again.`); // we display an error message
       return;
     }
@@ -73,14 +97,12 @@ class mainMenu {
 
 1) Add Book
 2) View Books
-3) Edit a Book
-4) Delete Book
-5) Exit
+3) Delete Book
+4) Exit
 
-`
-      );
+`);
       this.handleChoice(choice);
-    } while (choice !== "5");
+    } while (choice !== "4");
   }
 
   handleChoice(choice) {
@@ -97,20 +119,27 @@ class mainMenu {
         this.Library.viewBooks();
         break;
 
-      case `3`: // edit book
-        this.Library.viewBooks();
-        const editTitle = prompt(`Enter the title of the book:`);
-        const editAuthor = prompt(`Enter the author of the book:`);
-        const editYear = prompt(`Enter the year of publication:`);
-        const editIsbn = prompt(`Enter the ISBN of the book:`);
-        this.Library.addBook(editTitle, editAuthor, editYear, editIsbn);
+    //   case `3`: // edit book
+    //     this.Library.viewBooks();
+    //     const editIndex = prompt(`Enter the index of the book to edit:`);
+    //     const editTitle = prompt(`Enter the title of the book:`);
+    //     const editAuthor = prompt(`Enter the author of the book:`);
+    //     const editYear = prompt(`Enter the year of publication:`);
+    //     const editIsbn = prompt(`Enter the ISBN of the book:`);
+    //     this.Library.addBook(
+    //       editIndex,
+    //       editTitle,
+    //       editAuthor,
+    //       editYear,
+    //       editIsbn
+    //     );
 
-      case `4`: // delete book
+      case `3`: // delete book
         const index = prompt(`Enter the index of the book to delete:`);
         this.Library.deleteBook(index);
         break;
 
-      case `5`: // exit
+      case `4`: // exit
         alert(`Exiting Library App...`);
         break;
 
