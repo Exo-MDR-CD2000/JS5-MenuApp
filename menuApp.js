@@ -39,11 +39,13 @@ class Library {
     if (this.books.length === 0) {
       alert(`No books in the library`);
       return; // Exit the function if there are no books in the library
-    } 
-      let bookList = `Library Books:\n`; // Initialize the book list string
-      this.books.forEach((book, index) => { // each book in the books array
-        bookList += `${index + 1}. ${book.title} by ${book.author} (Year ${book.year}, ISBN: ${book.isbn})\n`; // concatenate the book details to the book list string
-      });
+    }
+    let bookList = `Library Books:\n`; // Initialize the book list string
+    this.books.forEach((book, index) => { // each book in the books array
+      bookList += `${index + 1}. ${book.title} by ${book.author} (Year ${
+        book.year
+      }, ISBN: ${book.isbn})\n`; // concatenate the book details to the book list string
+    });
     alert(bookList); // This will only be called if there are books in the library
   }
 
@@ -67,8 +69,15 @@ class mainMenu {
   displayMenu() {
     let choice;
     do {
-      choice = prompt(
-        `Library App Menu: \n1. Add Book\n2. View Books\n3. Delete Book\n4. Exit`
+      choice = prompt(`Library App Menu: 
+
+1) Add Book
+2) View Books
+3) Edit a Book
+4) Delete Book
+5) Exit
+
+`
       );
       this.handleChoice(choice);
     } while (choice !== "5");
@@ -88,7 +97,7 @@ class mainMenu {
         this.Library.viewBooks();
         break;
 
-        case `3`: // edit book
+      case `3`: // edit book
         this.Library.viewBooks();
         const editTitle = prompt(`Enter the title of the book:`);
         const editAuthor = prompt(`Enter the author of the book:`);
@@ -110,7 +119,6 @@ class mainMenu {
     }
   }
 }
-
 
 const menu = new mainMenu();
 menu.displayMenu();
