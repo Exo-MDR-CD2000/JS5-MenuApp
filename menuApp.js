@@ -71,7 +71,7 @@ class mainMenu {
         `Library App Menu: \n1. Add Book\n2. View Books\n3. Delete Book\n4. Exit`
       );
       this.handleChoice(choice);
-    } while (choice !== "4");
+    } while (choice !== "5");
   }
 
   handleChoice(choice) {
@@ -88,12 +88,20 @@ class mainMenu {
         this.Library.viewBooks();
         break;
 
-      case `3`: // delete book
+        case `3`: // edit book
+        this.Library.viewBooks();
+        const editTitle = prompt(`Enter the title of the book:`);
+        const editAuthor = prompt(`Enter the author of the book:`);
+        const editYear = prompt(`Enter the year of publication:`);
+        const editIsbn = prompt(`Enter the ISBN of the book:`);
+        this.Library.addBook(editTitle, editAuthor, editYear, editIsbn);
+
+      case `4`: // delete book
         const index = prompt(`Enter the index of the book to delete:`);
         this.Library.deleteBook(index);
         break;
 
-      case `4`: // exit
+      case `5`: // exit
         alert(`Exiting Library App...`);
         break;
 
