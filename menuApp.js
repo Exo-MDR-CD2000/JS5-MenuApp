@@ -155,3 +155,14 @@ menu.displayMenu(); // invoke the displayMenu method to display the menu
 
 // Console log the library object to see the books array
 console.log(menu.Library);
+
+
+
+// ========================================================================================================
+
+/** OOP Pillars Used in this assignment:
+ * Encapsulation: The classes are used to encapsulate the properties and methods related to the library and book items.
+ * Abstraction: The mainMenu class abstracts the details of the library and book classes from the user interface.
+ * Inheritance: There is no inheritance used in this example.
+ * Polymorphism: There is no polymorphism used in this example.
+*/
