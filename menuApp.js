@@ -49,28 +49,7 @@ class Library {
       }, ISBN: ${book.isbn})\n`; // concatenate the book details to the book list string
     });
     alert(bookList); // This will only be called if there are books in the library
-  }
-
-/*
-  editBook(index, title, author, year, isbn) {
-    if (this.books.length === 0) {
-      alert(`No books in the library to edit`);
-      return; // Exit the function if there are no books in the library
-    }
-    if (index < 1 || index > this.books.length) {
-      // if the index is less than 1 or greater than the number of books
-      alert(`Invalid book index. Please try again.`); // we display an error message
-      return;
-    }
-    const editBook = this.books[index]; // get the book to edit
-      editBook.title = title;
-      editBook.author = author;
-      editBook.year = year;
-      editBook.isbn = isbn;
-      alert(`Edited book: ${title} by ${author}`);
-  }
-      
-*/    
+  }   
 
   deleteBook(index) {
     if (index < 1 || index > this.books.length) {
@@ -118,21 +97,6 @@ class mainMenu {
       case `2`: // view books
         this.Library.viewBooks();
         break;
-
-    //   case `3`: // edit book
-    //     this.Library.viewBooks();
-    //     const editIndex = prompt(`Enter the index of the book to edit:`);
-    //     const editTitle = prompt(`Enter the title of the book:`);
-    //     const editAuthor = prompt(`Enter the author of the book:`);
-    //     const editYear = prompt(`Enter the year of publication:`);
-    //     const editIsbn = prompt(`Enter the ISBN of the book:`);
-    //     this.Library.addBook(
-    //       editIndex,
-    //       editTitle,
-    //       editAuthor,
-    //       editYear,
-    //       editIsbn
-    //     );
 
       case `3`: // delete book
         const index = prompt(`Enter the index of the book to delete:`);
