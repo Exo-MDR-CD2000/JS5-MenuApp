@@ -14,7 +14,7 @@
  */
 
 class BookItem {
-  // define a class for a book item with title, author, year, and isbn
+  // define a class for a book item with title, author, year, and isbn (blueprint for a book)
   constructor(title, author, year, isbn) {
     this.title = title;
     this.author = author;
@@ -26,7 +26,7 @@ class BookItem {
 class Library {
   // defines a class for a library with the functionality to add, view, and delete books
   constructor() {
-    this.books = []; // initialize an empty array to store books
+    this.books = []; // initialize an empty array to store books (fulfills the requirement to use at least one array)
   }
 
   addBook(title, author, year, isbn) {
@@ -37,14 +37,14 @@ class Library {
   }
 
   viewBooks() {
-    if (this.books.length === 0) {
+    if (this.books.length === 0) { // if there are no books in the library
       alert(`No books in the library`);
       return; // Exit the function if there are no books in the library
     }
     let bookList = `Library Books:\n`; // Initialize the book list string
     this.books.forEach((book, index) => {
       // each book in the books array
-      bookList += `${index + 1}. ${book.title} by ${book.author} (Year ${
+      bookList += `${index + 1}. ${book.title} by ${book.author} (Year ${ // index + 1 to start from 1, book title, author, year, and ISBN
         book.year
       }, ISBN: ${book.isbn})\n`; // concatenate the book details to the book list string
     });
@@ -87,11 +87,11 @@ class Library {
 
 class mainMenu {
   constructor() {
-    this.Library = new Library();
+    this.Library = new Library(); // the main menu class has a library object
   }
 
   displayMenu() {
-    let choice;
+    let choice; // use a do-while loop to display the menu until the user exits
     do {
       choice = prompt(`Library App Menu: 
 
@@ -102,10 +102,10 @@ class mainMenu {
 
 `);
       this.handleChoice(choice);
-    } while (choice !== "4");
+    } while (choice !== "4"); // choice 4 exits the menu
   }
 
-  handleChoice(choice) {
+  handleChoice(choice) { // use a switch statement to handle the user's choice from 1 to 4
     switch (choice) {
       case `1`: // Add Book
         const title = prompt(`Enter the title of the book:`);
@@ -149,5 +149,9 @@ class mainMenu {
   }
 }
 
-const menu = new mainMenu();
-menu.displayMenu();
+const menu = new mainMenu(); // instantiate the main menu object
+menu.displayMenu(); // invoke the displayMenu method to display the menu
+
+
+// Console log the library object to see the books array
+console.log(menu.Library);
